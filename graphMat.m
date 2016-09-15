@@ -1,4 +1,4 @@
-function [IncMat,B,Bus,Nbr,SortDegIdx,iRefBus] = graphMat(casedata)
+function [IncMat,B,Bus,Nbr,Buff_init,iRefBus] = graphMat(casedata,nPer)
 % graphMat:	calculate incidence matrix, weighted Laplacian matrix,
 %			Bus-struct, Nbr from the graph given by casedata. randn_xMat is
 %			used when calculating the mean of M. 
@@ -24,6 +24,7 @@ end
 Bus(:,M_NOMINAL) = calcMetric(casedata,zeros(nBranch,1),0); % nominal of M
 
 [~,SortDegIdx] = sort(Bus(:,DEG),'descend'); % if [B I]=sort(A), then A[I]=B.
+Buff_init = SortDegIdx(1:nPer)';
 iRefBus = SortDegIdx(1); % index of the reference bus
 IncMat(iRefBus,:) = []; % make 1st observable bus the reference bus, and remove the row
 

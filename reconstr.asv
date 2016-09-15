@@ -1,6 +1,6 @@
-function [pos] = reconstr(B,IncMat,Obs,diff_theta)
+function [s,pos,res] = reconstr(B,IncMat,Obs,diff_theta,kappa)
 % Sparse coefficient reconstruction using SVD and OMP
-
+nBranch = size(IncMat,2); % set it global?
 invB = inv(B); % (N-1)by(N-1)
 iRefBus = Obs(1);
 Obs_B = Obs(2:end); % observed bus indices without reference bus

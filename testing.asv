@@ -1,6 +1,0 @@
-tic
-Succ_Br = [12 25 54 99];
-for i = 1:10000
-	arr_Branch = Succ_Br(randperm(length(Succ_Br),20));
-end
-toc

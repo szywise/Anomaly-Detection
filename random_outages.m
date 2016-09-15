@@ -1,7 +1,7 @@
-% FUNCTION:	Data-adaptive algorithm with fluctuation in reactance
+% FUNCTION:	Performance demanding
 % USAGE:	nAll	: number of measurements
 %			xSigMax	: reactance fluctuation level
-% MODIFIED:	Sep 16
+% MODIFIED:	Sep 15
 clear
 define_constants;
 global DEG M_NOMINAL IF_OBS
@@ -13,7 +13,7 @@ IF_OBS = 3; % if-observed tag
 %% Operation perameter
 % make all parameters random
 nAll = 50; % number of meansurements
-arr_xSig = [0.35 0.3 0.25 0.1 0.15]; % reactance fluctuation level
+arr_xSig = [0.05 0.1 0.15 0.2 0.25 0.3 0.35]; % reactance fluctuation level
 n_xNoi = 1000; %10; % realization of noise
 n_pNoi = 5;
 
@@ -30,7 +30,7 @@ Unsucc_Br = [7,9,113,133,134,176,177,183,184];
 Succ_Br = setdiff(1:nBranch,Unsucc_Br);
 
 %% Graph matrices: incidence matrix, Bus(DEG,M_MEAN), and Nbr
-[IncMat,B,Bus,Nbr,SortDegIdx,iRefBus] = graphMat(mpc_init);
+[IncMat,B,Bus,Nbr,Buff_init,iRefBus] = graphMat(mpc_init,nPer);
 
 %% Single line outage
 cntAll = 0; % accumulate during iteration
@@ -48,14 +48,15 @@ for i_xSig = 1:length(arr_xSig)
 		[mpr_x,~] = runopf(mpc_x,mpoption('verbose',0,'out.all',0));
 		pre_theta = mpr_x.bus(:,VA) * pi / 180; % all phasor angles
 		pre_theta = pre_theta - repmat(pre_theta(iRefBus),nBus,1);
+		pre_power = mpr_x.bus(:,PD);
 		
 		arr_Branch = Succ_Br(randperm(length(Succ_Br),20)); % randperm > datasample; no sort.
 		for iBranch = arr_Branch
 			mpc_xp = mpc_x;
 			mpc_xp.branch(iBranch,:) = []; % branch iBr breaks down
 			for i_pNoi = 1:n_pNoi
-				pNoise = pSig * mean(mpc_xp.bus(:,PD)) * randn(nBus,1); % randn(nBus,1);
-				mpc_xp.bus(:,PD) = mpc_xp.bus(:,PD) + pNoise;			
+				pNoise = pSig * mean(pre_power) * randn(nBus,1); % randn(nBus,1);
+				mpc_xp.bus(:,PD) = pre_power + pNoise;			
 
 				% run optimal power flow simulation
 				[mpr_xp,succ] = runopf(mpc_xp,mpoption('verbose',0,'out.all',0));
@@ -68,7 +69,7 @@ for i_xSig = 1:length(arr_xSig)
 
 				% data-acquisition and decision-making
 				Bus(:,IF_OBS) = 0;
-				Buff = SortDegIdx(1:nPer)'; % init dynamic measurement buffer
+				Buff = Buff_init; % init dynamic measurement buffer
 				Bus(Buff,IF_OBS) = 1; % tag these buses as 'observed'
 				Obs = []; % observed buses
 				Repo = []; % observed but not expanded buses, just like a repository    
@@ -79,18 +80,18 @@ for i_xSig = 1:length(arr_xSig)
 					Repo = [Repo Buff];
 
 					% sparse coefficient reconstruction: SVD & OMP
-					[~,pos,~] = reconstr(B,IncMat,Obs,diff_theta,kappa); 
+					[pos] = reconstr(B,IncMat,Obs,diff_theta); 
 
 					if length(Obs) >= nAll % number of measurements are fixed
 						break; % 100 internal buses
 					end
 
 					% choose buses for next measurement
-					[Buff,~] = nextObs(nPer,diff_theta,Nbr,Repo);
+					[Buff] = nextObs(nPer,diff_theta,Nbr,Repo);
 				end % end of data-acquisition and decision-making
 
 				cntAll = cntAll + 1;
-				if pos(1) == iBranch
+				if pos == iBranch
 					cntAcc = cntAcc +  1;
 				end
 			end
