@@ -1,0 +1,4 @@
+Sep 14
+15:51	Backtracking algorithm may save memory
+
+19:56	for iBranch = 1:arr_Branch % arr_Branch is an array!!!
