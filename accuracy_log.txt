@@ -147,3 +147,7 @@ Start: 22:20:21 - Stop: 03:22:32 (Peking time)
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 35%			Accuracy: 76.236000&
 
+Start: 04:26:46 - Stop: 09:57:19
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 45%			Accuracy: 79.144000%
+

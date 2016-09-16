@@ -13,7 +13,7 @@ IF_OBS = 3; % if-observed tag
 %% Operation perameter
 % make all parameters random
 nAll = 50; % number of meansurements
-arr_xSig = [0.05 0.1 0.15 0.2 0.25 0.3 0.35]; % reactance fluctuation level
+arr_xSig = [0.45 0.4 0.35 0.3 0.25 0.2 0.15];%[0.05 0.1 0.15 0.2 0.25 0.3 0.35]; % reactance fluctuation level
 n_xNoi = 1000; %10; % realization of noise
 n_pNoi = 5;
 
