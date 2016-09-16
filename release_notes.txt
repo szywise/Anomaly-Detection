@@ -6,3 +6,5 @@ Sep 14
 Sep 15
 15:55	fix serious bug: power injection is accumulating noises
 		remove irrelevant and time-consuming function parameters
+
+19:18	fix bug: not resetting count
