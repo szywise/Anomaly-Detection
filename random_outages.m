@@ -10,16 +10,13 @@ DEG = 1; % degree
 M_NOMINAL = 2; % nominal value of M
 IF_OBS = 3; % if-observed tag
 
-%% Operation perameter
+%% Operation perameters
 % make all parameters random
 nAll = 50; % number of meansurements
-arr_xSig = [0.05 0.1 0.15 0.2 0.25 0.3 0.35]; % reactance fluctuation level
+nPer = 5; % number of measurements each time instant
+arr_xSig = [0.1 0.15 0.2 0.25 0.3 0.35]; % reactance fluctuation level
 n_xNoi = 1000; %10; % realization of noise
 n_pNoi = 5;
-
-%% Simulation parameters
-nPer = 5; % number of measurements each time instant
-kappa = 1; % upperbound of the total number of concurrently anomalous lines
 pSig = 0.01; % power noise level
 
 %% Start
@@ -33,11 +30,12 @@ Succ_Br = setdiff(1:nBranch,Unsucc_Br);
 [IncMat,B,Bus,Nbr,Buff_init,iRefBus] = graphMat(mpc_init,nPer);
 
 %% Single line outage
-cntAll = 0; % accumulate during iteration
-cntAcc = 0; % count of ERROR cases (bad recovery)
+
 arr_pAcc = zeros(size(arr_xSig));
 for i_xSig = 1:length(arr_xSig)
 	start_time = datestr(now,13);
+	cntAll = 0; % accumulate during iteration
+	cntAcc = 0; % count of good recovery
 	xSig = arr_xSig(i_xSig);
 	for i_xNoi = 1:n_xNoi
 		mpc_x = mpc_init; % backtracking needs more time
@@ -80,7 +78,7 @@ for i_xSig = 1:length(arr_xSig)
 					Repo = [Repo Buff];
 
 					% sparse coefficient reconstruction: SVD & OMP
-					[pos] = reconstr(B,IncMat,Obs,diff_theta); 
+					pos = reconstr(B,IncMat,Obs,diff_theta); 
 
 					if length(Obs) >= nAll % number of measurements are fixed
 						break; % 100 internal buses
@@ -99,7 +97,7 @@ for i_xSig = 1:length(arr_xSig)
 		end
 		[i_xSig i_xNoi]
 	end % for each branch
-	pAcc = cntAcc / cntAll
+	pAcc = cntAcc / cntAll 
 	arr_pAcc(i_xSig) = pAcc;
 	%% Output file header
 	fid = fopen('accuracy_log.txt','a');

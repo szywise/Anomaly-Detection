@@ -1,4 +1,4 @@
-function [pos] = reconstr(B,IncMat,Obs,diff_theta)
+function pos = reconstr(B,IncMat,Obs,diff_theta)
 % Sparse coefficient reconstruction using SVD and OMP
 
 invB = inv(B); % (N-1)by(N-1)
