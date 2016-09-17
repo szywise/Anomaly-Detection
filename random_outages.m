@@ -14,7 +14,7 @@ IF_OBS = 3; % if-observed tag
 % make all parameters random
 nAll = 50; % number of meansurements
 nPer = 5; % number of measurements each time instant
-arr_xSig = [0.1 0.15 0.2 0.25 0.3 0.35]; % reactance fluctuation level
+arr_xSig = [0.8 0.6 0.9]; % reactance fluctuation level
 n_xNoi = 1000; %10; % realization of noise
 n_pNoi = 5;
 pSig = 0.01; % power noise level
@@ -30,7 +30,6 @@ Succ_Br = setdiff(1:nBranch,Unsucc_Br);
 [IncMat,B,Bus,Nbr,Buff_init,iRefBus] = graphMat(mpc_init,nPer);
 
 %% Single line outage
-
 arr_pAcc = zeros(size(arr_xSig));
 for i_xSig = 1:length(arr_xSig)
 	start_time = datestr(now,13);

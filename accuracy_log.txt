@@ -155,3 +155,39 @@ Start: 19:17:55 - Stop: 21:24:51
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 10%			Accuracy: 78.922000%
 
+Start: 21:24:51 - Stop: 23:33:03
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 15%			Accuracy: 79.215000%
+
+Start: 23:33:03 - Stop: 01:43:42
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 20%			Accuracy: 79.349000%
+
+Start: 01:43:42 - Stop: 03:54:55
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 25%			Accuracy: 79.320000%
+
+Start: 03:54:55 - Stop: 06:06:08
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 30%			Accuracy: 78.982000%
+
+Start: 06:06:08 - Stop: 08:17:33
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 35%			Accuracy: 79.054000%
+
+Start: 09:56:07 - Stop: 12:08:00
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 40%			Accuracy: 79.252000%
+
+Start: 13:47:57 - Stop: 15:54:54
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 80%			Accuracy: 76.242000%
+
+Start: 15:54:54 - Stop: 18:03:46
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 60%			Accuracy: 78.800000%
+
+Start: 18:03:46 - Stop: 20:11:01
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 90%			Accuracy: 74.498000%
+
