@@ -84,7 +84,7 @@ for i_xSig = 1:length(arr_xSig)
 					end
 
 					% choose buses for next measurement
-					[Buff] = nextObs(nPer,diff_theta,Nbr,Repo);
+					Buff = nextObs(nPer,diff_theta,Nbr,Repo);
 				end % end of data-acquisition and decision-making
 
 				cntAll = cntAll + 1;

@@ -147,6 +147,8 @@ Start: 22:20:21 - Stop: 03:22:32 (Peking time)
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 35%			Accuracy: 76.236000&
 
+*** Sep 15, 16:21 ***
+
 Start: 16:21:58 - Stop: 18:30:17
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 5%			Accuracy: 79.389000%
@@ -171,23 +173,36 @@ Start: 03:54:55 - Stop: 06:06:08
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 30%			Accuracy: 78.982000%
 
+Start: 17:22:50 - Stop: 23:13:28 (Peking time)
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 30%			Accuracy: 79.405000%
+
 Start: 06:06:08 - Stop: 08:17:33
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 35%			Accuracy: 79.054000%
+
+Start: 11:26:55 - Stop: 17:22:50 (Peking time)
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 35%			Accuracy: 79.297000%
 
 Start: 09:56:07 - Stop: 12:08:00
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 40%			Accuracy: 79.252000%
 
-Start: 13:47:57 - Stop: 15:54:54
+Start: 04:26:46 - Stop: 09:57:19
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
-xSig: 80%			Accuracy: 76.242000%
+xSig: 45%			Accuracy: 79.144000%
 
 Start: 15:54:54 - Stop: 18:03:46
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 60%			Accuracy: 78.800000%
 
+Start: 13:47:57 - Stop: 15:54:54
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 80%			Accuracy: 76.242000%
+
 Start: 18:03:46 - Stop: 20:11:01
 Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 90%			Accuracy: 74.498000%
+
 
