@@ -160,3 +160,11 @@ Measurements: 50	n_xNoi: 1000	n_pNoi: 5
 xSig: 45%			Accuracy: 79.144000%
 
 
+Start: 11:26:55 - Stop: 17:22:50
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 35%			Accuracy: 79.297000%
+
+Start: 17:22:50 - Stop: 23:13:28
+Measurements: 50	n_xNoi: 1000	n_pNoi: 5
+xSig: 30%			Accuracy: 79.405000%
+
