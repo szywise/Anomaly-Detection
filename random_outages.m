@@ -14,9 +14,9 @@ IF_OBS = 3; % if-observed tag
 % make all parameters random
 nAll = 50; % number of meansurements
 nPer = 5; % number of measurements each time instant
-arr_xSig = [0.1 0.15 0.2 0.25 0.3 0.35]; % reactance fluctuation level
-n_xNoi = 1000; %10; % realization of noise
-n_pNoi = 5;
+arr_xSig = [0.5]; % reactance fluctuation level
+n_xNoi = 3; %10; % realization of noise
+n_pNoi = 3;
 pSig = 0.01; % power noise level
 
 %% Start
@@ -30,7 +30,6 @@ Succ_Br = setdiff(1:nBranch,Unsucc_Br);
 [IncMat,B,Bus,Nbr,Buff_init,iRefBus] = graphMat(mpc_init,nPer);
 
 %% Single line outage
-
 arr_pAcc = zeros(size(arr_xSig));
 for i_xSig = 1:length(arr_xSig)
 	start_time = datestr(now,13);
@@ -42,6 +41,8 @@ for i_xSig = 1:length(arr_xSig)
 
 		xRange = (2*xSig).*rand(nBranch,1) + repmat((1-xSig),nBranch,1); % (1-xSig,1+xSig)
 		mpc_x.branch(:,BR_X) = mpc_x.branch(:,BR_X) .* xRange;
+		B_true = IncMat*diag(mpc_x.branch(:,BR_X))*IncMat';
+
 
 		[mpr_x,~] = runopf(mpc_x,mpoption('verbose',0,'out.all',0));
 		pre_theta = mpr_x.bus(:,VA) * pi / 180; % all phasor angles
@@ -78,7 +79,8 @@ for i_xSig = 1:length(arr_xSig)
 					Repo = [Repo Buff];
 
 					% sparse coefficient reconstruction: SVD & OMP
-					pos = reconstr(B,IncMat,Obs,diff_theta); 
+					pos = reconstr(B,B_true,IncMat,Obs,diff_theta); 
+% 					pos = reconstr(B_true,IncMat,Obs,diff_theta);
 
 					if length(Obs) >= nAll % number of measurements are fixed
 						break; % 100 internal buses
@@ -92,6 +94,7 @@ for i_xSig = 1:length(arr_xSig)
 				if pos == iBranch
 					cntAcc = cntAcc +  1;
 				end
+				
 			end
 % 			[iBranch pos(1)]
 		end
