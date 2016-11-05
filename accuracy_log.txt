@@ -1754,3 +1754,163 @@ Start: 15:45:04 - Stop: 15:45:04
 Measurements: 50	n_xNoi: 1	n_pNoi: 1
 xSig: 0%			Accuracy: 100.000000%
 
+Start: Sep 28, 08:35:19 - Stop: Sep 28, 08:35:27
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 10%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:27 - Stop: Sep 28, 08:35:28
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 20%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:28 - Stop: Sep 28, 08:35:28
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 30%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:28 - Stop: Sep 28, 08:35:29
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 40%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:29 - Stop: Sep 28, 08:35:30
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 50%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:30 - Stop: Sep 28, 08:35:31
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 60%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:31 - Stop: Sep 28, 08:35:32
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 70%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:32 - Stop: Sep 28, 08:35:33
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 80%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:33 - Stop: Sep 28, 08:35:34
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 90%			Accuracy: 100.000000%
+
+Start: Sep 28, 08:35:34 - Stop: Sep 28, 08:35:34
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Sep 28, 12:28:37 - Stop: Sep 28, 12:33:22
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 10%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:39 - Stop: Sep 28, 18:36:46
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 10%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:46 - Stop: Sep 28, 18:36:47
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 20%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:47 - Stop: Sep 28, 18:36:48
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 30%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:48 - Stop: Sep 28, 18:36:48
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 40%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:48 - Stop: Sep 28, 18:36:49
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 50%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:49 - Stop: Sep 28, 18:36:50
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 60%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:50 - Stop: Sep 28, 18:36:51
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 70%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:51 - Stop: Sep 28, 18:36:51
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 80%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:51 - Stop: Sep 28, 18:36:52
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 90%			Accuracy: 100.000000%
+
+Start: Sep 28, 18:36:52 - Stop: Sep 28, 18:36:53
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:43 - Stop: Sep 29, 12:26:51
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 10%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:51 - Stop: Sep 29, 12:26:52
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 20%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:52 - Stop: Sep 29, 12:26:53
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 30%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:53 - Stop: Sep 29, 12:26:54
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 40%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:54 - Stop: Sep 29, 12:26:55
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 50%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:55 - Stop: Sep 29, 12:26:56
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 60%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:56 - Stop: Sep 29, 12:26:57
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 70%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:57 - Stop: Sep 29, 12:26:58
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 80%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:58 - Stop: Sep 29, 12:26:58
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 90%			Accuracy: 100.000000%
+
+Start: Sep 29, 12:26:58 - Stop: Sep 29, 12:26:59
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Sep 29, 13:35:39 - Stop: Sep 29, 13:35:40
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Sep 29, 13:36:01 - Stop: Sep 29, 13:36:02
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Sep 29, 13:39:26 - Stop: Sep 29, 13:39:27
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Sep 29, 13:45:34 - Stop: Sep 29, 13:45:34
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Sep 29, 15:15:37 - Stop: Sep 29, 15:15:40
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Oct 20, 10:10:16 - Stop: Oct 20, 10:10:21
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Oct 20, 10:10:21 - Stop: Oct 20, 10:10:21
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Oct 20, 11:24:35 - Stop: Oct 20, 11:29:01
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+
+Start: Oct 20, 11:29:09 - Stop: Oct 20, 11:29:09
+Measurements: 50	n_xNoi: 1	n_pNoi: 1
+xSig: 0%			Accuracy: 100.000000%
+

@@ -14,11 +14,11 @@ IF_OBS = 3; % if-observed tag
 % make all parameters random
 nAll = 50; % number of meansurements
 nPer = 5; % number of measurements each time instant
-arr_xSig = [0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0]; % reactance fluctuation level
+arr_xSig = 0; %[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0]; % reactance fluctuation level
 n_xSig = length(arr_xSig);
 n_xNoi = 1; %10; % realization of noise
 n_pNoi = 1;
-pSig = 0.01; % power noise level
+pSig = 0.0; % power noise level
 load rand_x;
 load randn_p;
 
@@ -56,6 +56,7 @@ rand_x = rand(nBranch,1);
 % rand_x = randi([0,1],nBranch,1);
 		xRange = (2*xSig).*rand_x + repmat((1-xSig),nBranch,1); % (1-xSig,1+xSig)
 		mpc_x.branch(:,BR_X) = mpc_x.branch(:,BR_X) .* xRange;
+pre_Lap = IncMat*diag(1./mpc_x.branch(:,BR_X))*IncMat';
 
 M1 = calcMetric(mpc_x,zeros(nBranch,1),0);
 B1 = IncMat*diag(mpc_x.branch(:,BR_X))*IncMat';
@@ -63,14 +64,16 @@ B1 = IncMat*diag(mpc_x.branch(:,BR_X))*IncMat';
 rec_change_ranking_M(i_xSig,:) = rec_ranking_M(i_xSig,:) - M_ranking';
 [xSig norm(rec_change_ranking_M)/sqrt(118) mean(abs(rec_change_ranking_M))];
 
-		[mpr_x,~] = runopf(mpc_x,mpoption('verbose',0,'out.all',0));
+		[mpr_x,~] = rundcpf(mpc_x,mpoption('verbose',0,'out.all',0));
 		pre_theta = mpr_x.bus(:,VA) * pi / 180; % all phasor angles
-		pre_theta = pre_theta - repmat(pre_theta(iRefBus),nBus,1);
+% 		pre_theta = pre_theta - repmat(pre_theta(iRefBus),nBus,1);
 		pre_power = mpr_x.bus(:,PD);
 		
 		arr_Branch = 31;%Succ_Br(randperm(length(Succ_Br),20)); % randperm > datasample; no sort.
 		for iBranch = arr_Branch
 			mpc_xp = mpc_x;
+diff_Lap = IncMat(:,iBranch) * (1./mpc_xp.branch(iBranch,BR_X)) * IncMat(:,iBranch)';
+post_Lap = pre_Lap - diff_Lap;
 			mpc_xp.branch(iBranch,:) = []; % branch iBr breaks down
 			for i_pNoi = 1:n_pNoi
 randn_p = randn(nBus,1);
@@ -78,12 +81,12 @@ randn_p = randn(nBus,1);
 				mpc_xp.bus(:,PD) = pre_power + pNoise;
 
 				% run optimal power flow simulation
-				[mpr_xp,succ] = runopf(mpc_xp,mpoption('verbose',0,'out.all',0));
+				[mpr_xp,succ] = rundcpf(mpc_xp,mpoption('verbose',0,'out.all',0));
 				if ~succ
 					break; % this topology is disconnected, go to next
 				end
 				post_theta = mpr_xp.bus(:,VA) * pi / 180;
-				post_theta = post_theta - repmat(post_theta(iRefBus),nBus,1);
+% 				post_theta = post_theta - repmat(post_theta(iRefBus),nBus,1);
 				diff_theta = post_theta - pre_theta;
 rec_diff_theta(i_xSig,:) = diff_theta';
 [~,~,rec_ranking_diff_theta(i_xSig,:)] = unique(abs(diff_theta'));
@@ -137,4 +140,4 @@ rec_sort_Obs = sort(rec_Obs,2);
 [~,sort_dt_idx]=sort(abs(diff_theta),'descend');
 largest = sort_dt_idx(1:50)';
 rec_concern = rec_ranking_diff_theta(:,largest);
-rec_concern_change_ranking = rec_concern - repmat(rec_concern(10,:),10,1);
+% rec_concern_change_ranking = rec_concern - repmat(rec_concern(10,:),10,1);
